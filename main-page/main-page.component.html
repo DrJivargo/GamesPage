@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="card-component">
+
+
+  <div class="carousel-wrapper" #carousel>
+    <div
+      class="card"
+      *ngFor="let card of cards; let i = index"
+      [class.active]="i === currentIndex"
+      [ngStyle]="{'background-image': 'url(' + card.backgroundImage + ')'}"
+    >
+      <img *ngIf="card.image" [src]="card.image" />
+      <a [href]="card.link" class="card-button">
+        {{ card.buttonText }}
+      </a>
+    </div>
+  </div>
+  <div class="buttons">
+    <button (click)="swipeRight()" [disabled]="currentIndex === 0" class="smooth-btn">
+      <svg icon="dropdown" class="dropdown1" ></svg>
+    </button>
+    <div class="indicators">
+      <span
+        *ngFor="let card of cards; let i = index"
+        [class.active]="i === currentIndex"
+        (click)="scrollToIndex(i)"
+        class="dot"
+        title="Card {{ card.id }}"
+      ></span>
+    </div>
+    <button (click)="swipeLeft()" [disabled]="currentIndex === cards.length - 1" class="smooth-btn">
+      <svg icon="dropdown" class="dropdown2"></svg>
+    </button>
+  </div>
+  <app-games></app-games>
+  <app-new-content></app-new-content>
+  <app-navigation></app-navigation>
+</div>

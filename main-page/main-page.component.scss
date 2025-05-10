@@ -1,0 +1,144 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carousel-wrapper {
+  position: relative;
+  width: 1460px; /* ширина видимой области */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  display: flex;
+  padding: 40px 15px 0 15px;
+  margin: 40px auto;
+  border-radius: 12px;
+  scrollbar-width: none;
+}
+
+.card {
+  position: relative;
+  flex: 0 0 1400px;
+  margin-left: 20px;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  box-sizing: border-box;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+  scroll-snap-align: center;
+}
+
+.card.active {
+  opacity: 1;
+  transform: scale(1);
+  cursor: default;
+}
+
+.card img {
+  position: absolute;
+  bottom: 37%;
+  left: 5%;
+  width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+  z-index: 100;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  &:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
+  }
+}
+.card-button{
+  position: absolute;
+  bottom: 30%;
+  left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #003676;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  width: 300px;
+  height: 40px;
+  transition: box-shadow 0.3s ease;
+
+  &:hover{
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 50px #335cff;
+  }
+}
+.buttons {
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.smooth-btn{
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+.dropdown1{
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
+}
+.dropdown2{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+}
+button {
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+.indicators {
+  display: flex;
+  gap: 8px;
+  margin: 0 10px;
+}
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #007bff;
+}
+
