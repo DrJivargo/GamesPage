@@ -1,0 +1,41 @@
+<div class="new-content-page">
+  <div class="nav-text">
+  <span>Jackbox Games Blog</span>
+  <h1>We're always up to something</h1>
+  </div>
+  <div class="nav-games">
+    <nav>
+      <a
+        [routerLink]="['/info']" >
+        <img src="/img/new-content%201.webp" class="games-img">
+        <span>Do u wanna play new game?</span>
+        <span class="date">{{ publishDate1 | date: 'dd MMMM , yyyy' }}</span>
+      </a>
+    </nav>
+    <nav>
+      <a
+        [routerLink]="['/info']" >
+        <img src="/img/new-content%202.webp" class="games-img">
+        <span>Do u wanna play new game?</span>
+        <span class="date">{{ publishDate2 | date: 'dd MMMM , yyyy' }}</span>
+      </a>
+    </nav>
+    <nav>
+      <a
+        [routerLink]="['/info']" >
+        <img src="/img/new-content%203.webp" class="games-img">
+        <span>Do u wanna play new game?</span>
+        <span class="date">{{ publishDate2 | date: 'dd MMMM , yyyy' }}</span>
+      </a>
+    </nav>
+    <nav>
+      <a
+        [routerLink]="['/info']" >
+        <img src="/img/new-content%204.webp" class="games-img">
+        <span>Do u wanna play new game?</span>
+        <span class="date">{{ publishDate3 | date: 'dd MMMM , yyyy' }}</span>
+      </a>
+    </nav>
+  </div>
+  <button [routerLink]="['/order']" class="order-btn">ORDER JOKEHUB</button>
+</div>

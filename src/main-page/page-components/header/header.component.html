@@ -1,0 +1,43 @@
+<header [class.scrolled]="scrolled">
+  <h1>JokeHub</h1>
+  <nav>
+    <ul class="menu">
+      <li class="menu-item" (click)="openDropdown('Games')" (mouseleave)="closeDropdown()">
+        Games
+        <svg [class.rotated]="activeDropdown === 'Games'" icon="dropdown" class="dropdown-svg"></svg>
+        @if(activeDropdown === 'Games'){
+          <div class="dropdown">
+            <a [routerLink]="['/news']">Packs</a>
+            <a [routerLink]="['/login']">Games</a>
+            <a [routerLink]="['/info']">On Sale</a>
+          </div>
+        }
+      </li>
+      <li class="menu-item">
+        <nav>
+          <a
+            [routerLink]="['/info']" routerLinkActive="active">How to play</a>
+        </nav>
+      </li>
+      <li class="menu-item" (click)="openDropdown('Company')" (mouseleave)="closeDropdown()">
+        Company
+        <svg [class.rotated]="activeDropdown === 'Company'" icon="dropdown" class="dropdown-svg"></svg>
+        @if (activeDropdown === 'Company') {
+          <div class="dropdown">
+            <a [routerLink]="['/info']">Blog</a>
+            <a [routerLink]="['/info']">Jobs</a>
+            <a [routerLink]="['/info']">Press Kit</a>
+          </div>
+        }
+      </li>
+    </ul>
+  </nav>
+  <div class="to-search-nav">
+    <button (click)="openModal()" class="sign-up-btn">Sign-Up</button>
+
+    <app-login
+      *ngIf="isModalOpen"
+      (closed)="closeModal()"
+    ></app-login>
+  </div>
+</header>

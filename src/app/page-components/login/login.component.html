@@ -1,0 +1,33 @@
+<div class="modal-backdrop" (click)="close()"></div>
+<div class="modal-content"
+     [class.visible]="isVisible"
+     (click)="$event.stopPropagation()">
+
+  <div class="login-form" [formGroup]="myForm" xmlns="http://www.w3.org/1999/html">
+    <div>
+      <input type="text" id="login" formControlName="login" placeholder="Login"/>
+      <small [hidden]="this.myForm.get('login')?.valid || this.myForm.get('login')?.untouched" class="alert">
+        Имя не указано
+      </small>
+    </div>
+    <div>
+      <input type="email" id="email" formControlName="email"
+             required pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+             placeholder="Email"
+      />
+      <small [hidden]="this.myForm.get('email')?.valid || this.myForm.get('email')?.untouched" class="alert">
+        Некорректный email
+      </small>
+    </div>
+    <div>
+      <input type="password" id="password" formControlName="password" placeholder="Password"/>
+      <small [hidden]="this.myForm.get('password')?.valid || this.myForm.get('password')?.untouched" class="alert">
+        Введите пароль
+      </small>
+    </div>
+    <div>
+      <button class="btn_valid" (click)="handleValue()" [disabled]="!myForm">Send value</button>
+      <button class="btn_valid" (click)="close()">Отмена</button>
+    </div>
+  </div>
+</div>
