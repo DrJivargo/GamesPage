@@ -1,0 +1,42 @@
+<div class="games-page">
+  <div class="target-block" id="target-block">
+    <h3>Jackbox Games Official Website</h3>
+    <h1>What's Jackbox Games?</h1>
+    <p>Jackbox Games is a Chicago-based studio best known for party-game hits like Quiplash, Fibbage, Drawful, Trivia Murder Party, and more!</p>
+    <p>Think of us as the child of classic social games like ‘charades’… the child who dropped out of college, but then earned the family’s respect by becoming a world famous clown.</p>
+    <div class="nav-games">
+      <nav>
+        <a
+          [routerLink]="['/info']" >
+          <img src="/img/new-content%201.webp" class="games-img">
+        </a>
+      </nav>
+      <nav>
+        <a
+          [routerLink]="['/info']" >
+          <img src="/img/new-content%202.webp" class="games-img">
+        </a>
+      </nav>
+      <nav>
+        <a
+          [routerLink]="['/info']" >
+          <img src="/img/new-content%203.webp" class="games-img">
+        </a>
+      </nav>
+      <nav>
+        <a
+          [routerLink]="['/info']" >
+          <img src="/img/new-content%204.webp" class="games-img">
+        </a>
+      </nav>
+    </div>
+  </div>
+  <img
+    *ngIf="showImage"
+    src="https://picsum.photos/200/100"
+    alt="Появляющаяся картинка"
+    class="bottom-image"
+    [class.show]="showImage"
+  />
+
+</div>
